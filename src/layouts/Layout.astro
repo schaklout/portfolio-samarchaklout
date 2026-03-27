@@ -1,0 +1,19 @@
+---
+import '../styles/global.css';
+const { title } = Astro.props;
+---
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+	</head>
+	<body class="bg-[#050505] text-zinc-300 selection:bg-orange-500 selection:text-white leading-relaxed">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+	body { font-family: 'Plus Jakarta Sans', sans-serif; }
+</style>
