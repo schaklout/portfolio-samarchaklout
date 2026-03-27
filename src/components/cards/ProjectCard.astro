@@ -1,0 +1,25 @@
+---
+const { repo } = Astro.props;
+---
+<a href={repo.html_url} target="_blank" 
+   class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-zinc-900/60 shadow-xl hover:shadow-orange-500/5">
+  <div>
+    <div class="flex items-center justify-between">
+      <div class="p-2 bg-orange-500/10 rounded-lg text-orange-500 group-hover:scale-110 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></皮></svg>
+      </div>
+      <span class="font-mono text-[10px] uppercase tracking-tighter text-zinc-500">{repo.language}</span>
+    </div>
+    <h3 class="mt-4 text-lg font-bold text-white group-hover:text-orange-400 transition-colors">{repo.name}</h3>
+    <p class="mt-2 text-sm leading-relaxed text-zinc-400 line-clamp-2">{repo.description || "Cloud-focused engineering project."}</p>
+  </div>
+  
+  <div class="mt-6 flex items-center gap-3">
+    <div class="flex items-center gap-1 text-xs text-zinc-500">
+      <span class="text-orange-500/60">★</span> {repo.stargazers_count}
+    </div>
+  </div>
+  
+  <!-- Subtle Gradient Overlay -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</a>
